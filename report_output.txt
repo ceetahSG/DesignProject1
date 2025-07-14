@@ -1,0 +1,8 @@
+Could not read donor file.
+Could not read request file.
+===== BLOOD DONATION REPORT =====
+
+Total Registered Donors : 0
+Total Blood Requests    : 0
+
+Donor Count by Blood Group:
