@@ -10,6 +10,7 @@
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import java.awt.Dimension;
 public class UserDashboard extends javax.swing.JFrame {
 
     /**
@@ -17,12 +18,36 @@ public class UserDashboard extends javax.swing.JFrame {
      */
     public UserDashboard() {
         initComponents();
-        jPanel1.setBackground(new java.awt.Color(224, 247, 250)); // light blue
+       setLocationRelativeTo(null);
+     
+        jPanel1.setBackground(new Color(240, 248, 255));
+        Dimension btnSize = new Dimension(150, 100);
+    btnSearchDonor.setPreferredSize(btnSize);
+    btnRequestBlood.setPreferredSize(btnSize);
+    btnDonationHistory.setPreferredSize(btnSize);
+    btnNotification.setPreferredSize(btnSize);
+    btnProfile.setPreferredSize(btnSize);
+    btnLogout.setPreferredSize(btnSize);
+
+    // Style buttons (color)
+    Color btnBg = new Color(30, 144, 255); // Dodger Blue
+    Color btnText = Color.WHITE;
+
+    btnSearchDonor.setBackground(btnBg);
+    btnSearchDonor.setForeground(btnText);
+    btnRequestBlood.setBackground(btnBg);
+    btnRequestBlood.setForeground(btnText);
+    btnDonationHistory.setBackground(btnBg);
+    btnDonationHistory.setForeground(btnText);
+    btnNotification.setBackground(btnBg);
+    btnNotification.setForeground(btnText);
+    btnProfile.setBackground(btnBg);
+    btnProfile.setForeground(btnText);
+    btnLogout.setBackground(btnBg);
+    btnLogout.setForeground(btnText);
 
 // Style the title label
-jLabel1.setFont(new java.awt.Font("Arial", Font.BOLD, 28));
-jLabel1.setForeground(new java.awt.Color(0, 77, 64)); // teal/dark green
-jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
 
 // Style all 6 buttons
 styleButton(btnSearchDonor);
@@ -50,41 +75,19 @@ styleButton(btnLogout);
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        btnSearchDonor = new javax.swing.JButton();
         btnRequestBlood = new javax.swing.JButton();
         btnDonationHistory = new javax.swing.JButton();
+        btnSearchDonor = new javax.swing.JButton();
         btnNotification = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Welcome To Digital Blood Donor App");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
-        );
-
         jPanel1.setLayout(new java.awt.GridLayout(2, 3, 20, 20));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(30, 50, 30, 50));
-
-        btnSearchDonor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-search-64.png"))); // NOI18N
-        btnSearchDonor.setText("Seach Donor");
-        btnSearchDonor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchDonorActionPerformed(evt);
-            }
-        });
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(30, 50, 30, 50));
 
         btnRequestBlood.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-request-64.png"))); // NOI18N
         btnRequestBlood.setText("Request Blood");
@@ -102,8 +105,16 @@ styleButton(btnLogout);
             }
         });
 
+        btnSearchDonor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-search-64.png"))); // NOI18N
+        btnSearchDonor.setText("Seach Donor");
+        btnSearchDonor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchDonorActionPerformed(evt);
+            }
+        });
+
         btnNotification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-notification-64.png"))); // NOI18N
-        btnNotification.setText("Notificatoin");
+        btnNotification.setText("Notification");
         btnNotification.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNotificationActionPerformed(evt);
@@ -126,41 +137,52 @@ styleButton(btnLogout);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnNotification)
-                        .addGap(89, 89, 89)
-                        .addComponent(btnProfile)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLogout))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnSearchDonor)
-                        .addGap(72, 72, 72)
-                        .addComponent(btnRequestBlood)
-                        .addGap(78, 78, 78)
-                        .addComponent(btnDonationHistory)))
-                .addContainerGap(50, Short.MAX_VALUE))
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Welcome To Digital Blood Donor App");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.SE_RESIZE_CURSOR));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSearchDonor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNotification, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnRequestBlood, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDonationHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(45, 45, 45))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearchDonor)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1)
+                .addGap(81, 81, 81)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRequestBlood)
                     .addComponent(btnDonationHistory))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNotification)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSearchDonor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnNotification)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnProfile)
                     .addComponent(btnLogout))
-                .addGap(33, 33, 33))
+                .addGap(44, 44, 44))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -168,27 +190,14 @@ styleButton(btnLogout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jLabel1)))
-                .addGap(124, 124, 124)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 17, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,20 +211,20 @@ styleButton(btnLogout);
         JOptionPane.showMessageDialog(this,"On maintenance.");
     }//GEN-LAST:event_btnProfileActionPerformed
 
-    private void btnRequestBloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestBloodActionPerformed
-          JOptionPane.showMessageDialog(this,"On maintenance.");
-    }//GEN-LAST:event_btnRequestBloodActionPerformed
-
-    private void btnDonationHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDonationHistoryActionPerformed
-          JOptionPane.showMessageDialog(this,"On maintenance.");
-    }//GEN-LAST:event_btnDonationHistoryActionPerformed
-
     private void btnNotificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotificationActionPerformed
-         JOptionPane.showMessageDialog(this,"On maintenance.");
+        JOptionPane.showMessageDialog(this,"On maintenance.");
     }//GEN-LAST:event_btnNotificationActionPerformed
 
+    private void btnDonationHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDonationHistoryActionPerformed
+        JOptionPane.showMessageDialog(this,"On maintenance.");
+    }//GEN-LAST:event_btnDonationHistoryActionPerformed
+
+    private void btnRequestBloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestBloodActionPerformed
+        JOptionPane.showMessageDialog(this,"On maintenance.");
+    }//GEN-LAST:event_btnRequestBloodActionPerformed
+
     private void btnSearchDonorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchDonorActionPerformed
-         JOptionPane.showMessageDialog(this,"On maintenance.");
+        JOptionPane.showMessageDialog(this,"On maintenance.");
     }//GEN-LAST:event_btnSearchDonorActionPerformed
 
     /**
@@ -262,6 +271,5 @@ styleButton(btnLogout);
     private javax.swing.JButton btnSearchDonor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

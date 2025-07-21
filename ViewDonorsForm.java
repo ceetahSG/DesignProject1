@@ -21,6 +21,7 @@ public class ViewDonorsForm extends javax.swing.JFrame {
 
 public ViewDonorsForm() {
     initComponents();
+    setLocationRelativeTo(null);
     model = (DefaultTableModel) donorTable.getModel();
     loadDonorsFromFile();
 }

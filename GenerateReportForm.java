@@ -25,6 +25,7 @@ public class GenerateReportForm extends javax.swing.JFrame {
      */
     public GenerateReportForm() {
         initComponents();
+        setLocationRelativeTo(null);
         reportArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
         loadReport();
 
@@ -34,7 +35,7 @@ public class GenerateReportForm extends javax.swing.JFrame {
     int requestCount = 0;
     HashMap<String, Integer> bloodGroups = new HashMap<>();
 
-    try (BufferedReader br = new BufferedReader(new FileReader("donors.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("D:\\ceetah\\designProject\\BloodBankSystem\\src\\donors.txt.txt"))) {
         String line;
         while ((line = br.readLine()) != null) {
             donorCount++;
@@ -48,7 +49,7 @@ public class GenerateReportForm extends javax.swing.JFrame {
         reportArea.append("Could not read donor file.\n");
     }
 
-    try (BufferedReader br = new BufferedReader(new FileReader("requests.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("D:\\ceetah\\designProject\\BloodBankSystem\\src\\requests.txt.txt"))) {
         while (br.readLine() != null) {
             requestCount++;
         }

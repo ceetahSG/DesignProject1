@@ -14,21 +14,15 @@ import java.awt.Dimension;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Insets;
-import javax.swing.border.Border;
+
 
 import javax.swing.border.Border;
-import javax.swing.JTable;
-import javax.swing.JScrollPane;
-import javax.swing.table.DefaultTableModel;
+
 import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Font;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+
 public class RoleSelectionForm extends javax.swing.JFrame {
 
     /**
@@ -36,19 +30,22 @@ public class RoleSelectionForm extends javax.swing.JFrame {
      */
     public RoleSelectionForm() {
         initComponents();
-        getContentPane().setBackground(new Color(230, 245, 255)); // soft blue
+        setLocationRelativeTo(null);
+        getContentPane().setBackground(new Color(230, 245, 255));
+         Color btnBg = new Color(30, 144, 255); // Dodger Blue
+    Color btnText = Color.WHITE;
         
         Dimension buttonSize = new Dimension(140, 40);
 btnAdmin.setPreferredSize(buttonSize);
 btnUser.setPreferredSize(buttonSize);
 
-btnAdmin.setBackground(new Color(0, 102, 204));
-btnAdmin.setForeground(Color.WHITE);
+btnAdmin.setBackground(btnBg);
+btnAdmin.setForeground(btnText);
 btnAdmin.setFont(new Font("Segoe UI", Font.BOLD, 16));
 btnAdmin.setBorder(new RoundedBorder(10)); // optional
 
-btnUser.setBackground(new Color(0, 153, 76));
-btnUser.setForeground(Color.WHITE);
+btnUser.setBackground(btnBg);
+btnUser.setForeground(btnText);
 btnUser.setFont(new Font("Segoe UI", Font.BOLD, 16));
 
     }
@@ -89,9 +86,11 @@ btnUser.setFont(new Font("Segoe UI", Font.BOLD, 16));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Welcome To Blood Donation Portal!");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Welcome To Digital Blood Donor App");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-admin-64.png"))); // NOI18N
         btnAdmin.setText("Admin");
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,8 +98,10 @@ btnUser.setFont(new Font("Segoe UI", Font.BOLD, 16));
             }
         });
 
-        jLabel2.setText("Who are you?");
+        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel2.setText("Choose Your Identification");
 
+        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-user-64.png"))); // NOI18N
         btnUser.setText("User");
         btnUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,30 +116,31 @@ btnUser.setFont(new Font("Segoe UI", Font.BOLD, 16));
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jLabel1))
+                        .addGap(23, 23, 23)
+                        .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnUser, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(btnAdmin)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(btnUser)))))
-                .addContainerGap(110, Short.MAX_VALUE))
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel1)))
+                .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(88, 88, 88))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdmin)
+                    .addComponent(btnUser))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAdmin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnUser)
-                .addGap(98, 98, 98))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();

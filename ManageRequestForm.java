@@ -24,6 +24,7 @@ public class ManageRequestForm extends javax.swing.JFrame {
 
 public ManageRequestForm() {
     initComponents();
+    setLocationRelativeTo(null);
 
     // Approve Button - Green
 btnApprove.setBackground(new java.awt.Color(0, 153, 76));
@@ -184,7 +185,7 @@ private void loadRequestsFromFile() {
     }
 }
 private void saveUpdatedRequests() {
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/data/requests.txt"))) {
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\ceetah\\designProject\\BloodBankSystem\\src\\requests.txt.txt"))) {
         for (int i = 0; i < model.getRowCount(); i++) {
             String line = model.getValueAt(i, 0) + "," +
                           model.getValueAt(i, 1) + "," +

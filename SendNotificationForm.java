@@ -17,6 +17,7 @@ public class SendNotificationForm extends javax.swing.JFrame {
      */
     public SendNotificationForm() {
         initComponents();
+        setLocationRelativeTo(null);
 comboBloodGroup.addItem("All");
 comboBloodGroup.addItem("A+");
 comboBloodGroup.addItem("A-");
@@ -68,7 +69,6 @@ comboBloodGroup.addItem("O-");
         txtMessage.setText("Type your messege here..");
         jScrollPane1.setViewportView(txtMessage);
 
-        comboBloodGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBloodGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBloodGroupActionPerformed(evt);

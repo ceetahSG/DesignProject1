@@ -1,2 +1,2 @@
-Alice, A+, Dhaka, Pending
-Bob, O-, Chattogram, Pending
+Alice, A+, Dhaka,Rejected
+Bob, O-, Chattogram,Rejected
